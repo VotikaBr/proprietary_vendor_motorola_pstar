@@ -1,0 +1,4 @@
+HFRPreviewFormat=0
+enableHFRPreviewUBWC=1
+enableVideoHFR=1
+EISV3Enable=1

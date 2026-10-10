@@ -11,6 +11,383 @@ soong_namespace {
     ],
 }
 
+android_app_import {
+    name: "MotCamera3AI",
+    owner: "motorola",
+    apk: "proprietary/product/app/MotCamera3AI/MotCamera3AI.apk",
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    product_specific: true,
+}
+
+android_app_import {
+    name: "MotCamera4",
+    owner: "motorola",
+    apk: "proprietary/product/priv-app/MotCamera4/MotCamera4.apk",
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    privileged: true,
+    product_specific: true,
+}
+
+android_app_import {
+    name: "MotCameraDesktop",
+    owner: "motorola",
+    apk: "proprietary/system_ext/priv-app/MotCameraDesktop/MotCameraDesktop.apk",
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    privileged: true,
+    system_ext_specific: true,
+}
+
+android_app_import {
+    name: "ImagerTuning-V2",
+    owner: "motorola",
+    apk: "proprietary/system_ext/priv-app/ImagerTuning-V2/ImagerTuning-V2.apk",
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    privileged: true,
+    system_ext_specific: true,
+}
+
+android_app_import {
+    name: "CameraExtensionsProxy",
+    owner: "motorola",
+    apk: "proprietary/system/app/CameraExtensionsProxy/CameraExtensionsProxy.apk",
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+}
+
+android_app_import {
+    name: "MotoSignature2App",
+    owner: "motorola",
+    apk: "proprietary/system/app/MotoSignature2App/MotoSignature2App.apk",
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+}
+
+android_app_import {
+    name: "MotoSignatureApp",
+    owner: "motorola",
+    apk: "proprietary/system/app/MotoSignatureApp/MotoSignatureApp.apk",
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+}
+
+cc_prebuilt_library_shared {
+    name: "motcamera_imgtuner_system",
+    stem: "motorola.hardware.camera.imgtuner@1.0",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/system/lib/motorola.hardware.camera.imgtuner@1.0.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/system/lib64/motorola.hardware.camera.imgtuner@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "motcamera_calibverify_system_ext",
+    stem: "libarcsoft_calibverify_TriCamera",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/system_ext/lib/libarcsoft_calibverify_TriCamera.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libarcsoft_calibverify_TriCamera.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "motcamera_desktop_helper_system_ext",
+    stem: "libjni_helper.motocameradesktop",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/system_ext/lib/libjni_helper.motocameradesktop.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libjni_helper.motocameradesktop.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "motcamera_desktop_hal1_system_ext",
+    stem: "motorola.hardware.camera.desktop@1.0",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/system_ext/lib/motorola.hardware.camera.desktop@1.0.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/motorola.hardware.camera.desktop@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "motcamera_desktop_hal2_system_ext",
+    stem: "motorola.hardware.camera.desktop@2.0",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/system_ext/lib/motorola.hardware.camera.desktop@2.0.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/motorola.hardware.camera.desktop@2.0.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "motcamera_imgtuner2_system_ext",
+    stem: "motorola.hardware.camera.imgtuner@2.0",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/system_ext/lib/motorola.hardware.camera.imgtuner@2.0.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/motorola.hardware.camera.imgtuner@2.0.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "motcamera_imgtuner_vendor",
+    stem: "motorola.hardware.camera.imgtuner@1.0",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/motorola.hardware.camera.imgtuner@1.0.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/motorola.hardware.camera.imgtuner@1.0.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "motcamera_imgtuner_impl_vendor",
+    stem: "motorola.hardware.camera.imgtuner@1.0-impl",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/hw/motorola.hardware.camera.imgtuner@1.0-impl.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/motorola.hardware.camera.imgtuner@1.0-impl.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    relative_install_path: "hw",
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "motcamera_imgtuner_service_vendor",
+    stem: "motorola.hardware.camera.imgtuner@1.0-service",
+    owner: "motorola",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/hw/motorola.hardware.camera.imgtuner@1.0-service",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    check_elf_files: false,
+    prefer: true,
+    relative_install_path: "hw",
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libthirdparty_zoomtranslator_imp",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libthirdparty_zoomtranslator_imp.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libthirdparty_zoomtranslator_imp.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libtriplecam_image_optical_zoom",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libtriplecam_image_optical_zoom.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libtriplecam_image_optical_zoom.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libtriplecam_optical_zoom_control",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libtriplecam_optical_zoom_control.so",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libtriplecam_optical_zoom_control.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
 cc_prebuilt_library_shared {
     name: "libcamxexternalformatutils",
     owner: "motorola",
@@ -3357,7 +3734,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libmot_chi_desktop_helper.so",
             ],
             shared_libs: [
-                "libgui_buffer_shim_vendor",
+                "libgui_shim_vendor",
                 "libutils",
                 "libcutils",
                 "liblog",
@@ -3380,6 +3757,7 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -3673,6 +4051,21 @@ cc_prebuilt_library_shared {
         none: true,
     },
     target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libvidhance.so",
+            ],
+            shared_libs: [
+                "libGLESv3",
+                "libEGL",
+                "libGLESv2",
+                "libdl",
+                "libm",
+                "liblog",
+                "libc++",
+                "libc",
+            ],
+        },
         android_arm64: {
             srcs: [
                 "proprietary/vendor/lib64/libvidhance.so",
@@ -3689,7 +4082,7 @@ cc_prebuilt_library_shared {
             ],
         },
     },
-    compile_multilib: "64",
+    compile_multilib: "both",
     prefer: true,
     soc_specific: true,
 }
@@ -3701,6 +4094,22 @@ cc_prebuilt_library_shared {
         none: true,
     },
     target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libvidhance_active_ois.so",
+            ],
+            shared_libs: [
+                "libvidhance",
+                "libdl",
+                "libm",
+                "liblog",
+                "libGLESv3",
+                "libEGL",
+                "libGLESv2",
+                "libc++",
+                "libc",
+            ],
+        },
         android_arm64: {
             srcs: [
                 "proprietary/vendor/lib64/libvidhance_active_ois.so",
@@ -3718,7 +4127,7 @@ cc_prebuilt_library_shared {
             ],
         },
     },
-    compile_multilib: "64",
+    compile_multilib: "both",
     prefer: true,
     soc_specific: true,
 }
@@ -3730,6 +4139,22 @@ cc_prebuilt_library_shared {
         none: true,
     },
     target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libvidhance_dmbr.so",
+            ],
+            shared_libs: [
+                "libvidhance",
+                "libdl",
+                "libm",
+                "liblog",
+                "libGLESv3",
+                "libEGL",
+                "libGLESv2",
+                "libc++",
+                "libc",
+            ],
+        },
         android_arm64: {
             srcs: [
                 "proprietary/vendor/lib64/libvidhance_dmbr.so",
@@ -3747,7 +4172,7 @@ cc_prebuilt_library_shared {
             ],
         },
     },
-    compile_multilib: "64",
+    compile_multilib: "both",
     prefer: true,
     soc_specific: true,
 }
@@ -3759,6 +4184,22 @@ cc_prebuilt_library_shared {
         none: true,
     },
     target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libvidhance_face_stabilizer.so",
+            ],
+            shared_libs: [
+                "libvidhance",
+                "libdl",
+                "libm",
+                "liblog",
+                "libGLESv3",
+                "libEGL",
+                "libGLESv2",
+                "libc++",
+                "libc",
+            ],
+        },
         android_arm64: {
             srcs: [
                 "proprietary/vendor/lib64/libvidhance_face_stabilizer.so",
@@ -3776,7 +4217,7 @@ cc_prebuilt_library_shared {
             ],
         },
     },
-    compile_multilib: "64",
+    compile_multilib: "both",
     prefer: true,
     soc_specific: true,
 }
@@ -3788,6 +4229,22 @@ cc_prebuilt_library_shared {
         none: true,
     },
     target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libvidhance_fbc.so",
+            ],
+            shared_libs: [
+                "libvidhance",
+                "libdl",
+                "libm",
+                "liblog",
+                "libGLESv3",
+                "libEGL",
+                "libGLESv2",
+                "libc++",
+                "libc",
+            ],
+        },
         android_arm64: {
             srcs: [
                 "proprietary/vendor/lib64/libvidhance_fbc.so",
@@ -3805,7 +4262,7 @@ cc_prebuilt_library_shared {
             ],
         },
     },
-    compile_multilib: "64",
+    compile_multilib: "both",
     prefer: true,
     soc_specific: true,
 }
@@ -3817,6 +4274,22 @@ cc_prebuilt_library_shared {
         none: true,
     },
     target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libvidhance_horizon_correction.so",
+            ],
+            shared_libs: [
+                "libvidhance",
+                "libdl",
+                "libm",
+                "liblog",
+                "libGLESv3",
+                "libEGL",
+                "libGLESv2",
+                "libc++",
+                "libc",
+            ],
+        },
         android_arm64: {
             srcs: [
                 "proprietary/vendor/lib64/libvidhance_horizon_correction.so",
@@ -3834,7 +4307,7 @@ cc_prebuilt_library_shared {
             ],
         },
     },
-    compile_multilib: "64",
+    compile_multilib: "both",
     prefer: true,
     soc_specific: true,
 }
@@ -3846,6 +4319,22 @@ cc_prebuilt_library_shared {
         none: true,
     },
     target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libvidhance_stabilizer.so",
+            ],
+            shared_libs: [
+                "libvidhance",
+                "libdl",
+                "libm",
+                "liblog",
+                "libGLESv3",
+                "libEGL",
+                "libGLESv2",
+                "libc++",
+                "libc",
+            ],
+        },
         android_arm64: {
             srcs: [
                 "proprietary/vendor/lib64/libvidhance_stabilizer.so",
@@ -3863,7 +4352,52 @@ cc_prebuilt_library_shared {
             ],
         },
     },
-    compile_multilib: "64",
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libvidhance_zoom_stabilization",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libvidhance_zoom_stabilization.so",
+            ],
+            shared_libs: [
+                "libvidhance",
+                "libdl",
+                "libm",
+                "liblog",
+                "libGLESv3",
+                "libEGL",
+                "libGLESv2",
+                "libc++",
+                "libc",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libvidhance_zoom_stabilization.so",
+            ],
+            shared_libs: [
+                "libvidhance",
+                "libdl",
+                "libm",
+                "liblog",
+                "libGLESv3",
+                "libEGL",
+                "libGLESv2",
+                "libc++",
+                "libc",
+            ],
+        },
+    },
+    compile_multilib: "both",
     prefer: true,
     soc_specific: true,
 }
